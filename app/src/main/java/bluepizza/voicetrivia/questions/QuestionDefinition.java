@@ -9,7 +9,7 @@ package bluepizza.voicetrivia.questions;
 import java.util.ArrayList;
 
 /**
- * Contains the definition of a trivia question.
+ * Contains the definition of a trivia question...
  */
 public class QuestionDefinition
 {
