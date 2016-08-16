@@ -34,9 +34,8 @@ This is my brainstorming scratchpad, please ignore
             - Scoring: 100 pts per question
             - When a question is failed:
                 - 2-player mode: the other player will be given a chance to answer the failed question for full points
-                - 3+ player mode: 
-                    - Option A: anyone can answer, but points will be split evenly across players
-                        - Points = 100 \ (players - 1)
+                - 3+ player mode: anyone can answer, points will be split evenly across players
+                    - Points = 100 \ (players - 1)
             - Number of rounds (10/25/40/Endless quick picks... or custom value from 5)
             - Person with highest score wins at the end
         - Trivia Round Table
