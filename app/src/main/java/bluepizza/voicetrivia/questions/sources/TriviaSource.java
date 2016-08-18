@@ -8,6 +8,10 @@ package bluepizza.voicetrivia.questions.sources;
 
 public class TriviaSource {
 
+    public String preloadedSourcesPath;
 
+    public TriviaSource() {
+
+    }
 
 }
