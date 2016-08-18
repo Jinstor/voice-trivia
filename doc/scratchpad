@@ -1,0 +1,47 @@
+This is my brainstorming scratchpad, please ignore
+
+- Sources
+    - Sources can include a dictionary for translating between two languages, so that questions would consist of translating simple words - no sentences, this isn't Duolingo
+    - Can include a music database that asks questions based on songs found on your phone! i.e. what year was song ____ released
+
+- Global settings
+    - Available sources
+        - Predownload from internet sources
+
+- Settings done per game
+    - Time allowed to answer (default depends on # of players, Sequential play only); numeric up/down
+        - 2P: 20s
+        - 3-4P: 15s
+        - 5P+: 10s
+    - Selected sources; checklistbox
+    - Selected categories; checklistbox
+    - Allow hint when questions do not provide a choice (first letter); true/false
+
+- Types of games:
+    - Single Player
+        - Trivia
+            - Questions are sequential
+            - Scoring: 100 pts per question
+            - Save slots available to track:
+                - Already answered questions
+                - Score
+                - Total questions answered
+                - Game settings
+    - Multiplayer
+        - Trivia Sequence
+            - 2-10 players
+            - All players get different questions
+            - Scoring: 100 pts per question
+            - When a question is failed:
+                - 2-player mode: the other player will be given a chance to answer the failed question for full points
+                - 3+ player mode: anyone can answer, points will be split evenly across players
+                    - Points = 100 \ (players - 1)
+            - Number of rounds (10/25/40/Endless quick picks... or custom value from 5)
+            - Person with highest score wins at the end
+        - Trivia Round Table
+            - 3-10 players
+            - All players sequentially answer the same question, at the end of each round the answer is revealed
+            - The order of player is reversed on every other question, i.e. question 1 is answered by P1, P2, P3 then P4, question 2 is answered by P4, P3, P2 then P1, and so forth.
+        - Family Feud (added AFTER - this would be a brilliant addition as we do have a free source of family feud questions!)
+            - 2-10 players
+            - Thing plays like Family Feud
