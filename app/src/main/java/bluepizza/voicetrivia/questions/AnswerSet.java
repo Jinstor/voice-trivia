@@ -12,7 +12,7 @@ import java.util.Random;
 /**
  * Contains a set of answers for a question.
  */
-public class AnswerSet
+public class AnswerSet extends ArrayList<String>
 {
 
     //region Variables
@@ -25,17 +25,12 @@ public class AnswerSet
     /**
      * The question definition from where the answers are coming from.
      */
-    public final QuestionDefinition questionDefinition;
+    public final TriviaQuestion questionDefinition;
 
     /**
      * The index at which the right answer is found.
      */
     public final int rightAnswerIndex;
-
-    /**
-     * The list of all available answers.
-     */
-    public final ArrayList<String> answers;
 
     //endregion
 
@@ -54,18 +49,17 @@ public class AnswerSet
      * Instantiates a new AnswerSet.
      * @param questionDefinition The question definition from where the answers are coming from.
      */
-    public AnswerSet(QuestionDefinition questionDefinition)
+    public AnswerSet(TriviaQuestion questionDefinition)
     {
-        this.questionDefinition = questionDefinition;
-
-        answers = new ArrayList<String>(
+        super(
             Math.min(
-                questionDefinition.wrongAnswers.size() + 1, QuestionDefinition.MAX_ANSWERS));
+                questionDefinition.wrongAnswers.size() + 1, TriviaQuestion.MAX_ANSWERS));
+        this.questionDefinition = questionDefinition;
 
         // Set the correct answer to a random index within the
         // answers list
         rightAnswerIndex = random.nextInt(questionDefinition.wrongAnswers.size() + 1);
-        answers.set(rightAnswerIndex, questionDefinition.rightAnswer);
+        this.set(rightAnswerIndex, questionDefinition.rightAnswer);
 
         // Now just fill the rest of the answers with random
         // wrong answers
@@ -77,7 +71,7 @@ public class AnswerSet
             wrongAnswerIndexes.set(i, i);
         }
 
-        for (int i = 0; i < answers.size(); ++i)
+        for (int i = 0; i < this.size(); ++i)
         {
             // If we're at the correct answer index, move on
             if (i == rightAnswerIndex)
@@ -85,7 +79,7 @@ public class AnswerSet
 
             int wrongIndex =
                 wrongAnswerIndexes.remove(random.nextInt(wrongAnswerIndexes.size()));
-            answers.set(i, questionDefinition.wrongAnswers.get(wrongIndex));
+            this.set(i, questionDefinition.wrongAnswers.get(wrongIndex));
         }
     }
 

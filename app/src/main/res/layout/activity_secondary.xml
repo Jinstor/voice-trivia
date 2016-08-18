@@ -45,6 +45,13 @@
                 android:text="@string/dummy_button" />
 
         </LinearLayout>
+
+        <ListView
+            android:layout_width="188dp"
+            android:layout_height="132dp"
+            android:id="@+id/listView"
+            android:layout_gravity="left|center_vertical"
+            android:choiceMode="multipleChoice"/>
     </FrameLayout>
 
 </FrameLayout>
