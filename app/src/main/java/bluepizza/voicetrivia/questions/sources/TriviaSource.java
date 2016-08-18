@@ -14,4 +14,8 @@ public class TriviaSource {
 
     }
 
+    public void loadLocalSources() {
+
+    }
+
 }
