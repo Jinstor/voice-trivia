@@ -24,7 +24,7 @@ public class TriviaQuestion {
     /**
      * The trivia source from which this question is coming from.
      */
-    public final TriviaSource source;
+    public final CSVTriviaSource source;
 
     /**
      * The question string.
@@ -58,13 +58,31 @@ public class TriviaQuestion {
      * @param wrongAnswers Wrong answers to the questions.
      */
     public TriviaQuestion(
-            TriviaSource source, String question, String rightAnswer,
+            CSVTriviaSource source, String question, String rightAnswer,
             ArrayList<String> wrongAnswers) {
         this.source = source;
         this.question = question;
         this.rightAnswer = rightAnswer;
         this.wrongAnswers = wrongAnswers;
         this.hashCode = hashCode64(question);
+    }
+
+    /**
+     * Instantiates a new Question.
+     * @param source The trivia source from which this question is coming from.
+     * @param values An array containing parsed CSV values of a question.
+     */
+    public TriviaQuestion(CSVTriviaSource source, String[] values) {
+        this.source = source;
+        this.question = values[0];
+        this.rightAnswer = values[2];
+        this.wrongAnswers = new ArrayList<String>();
+
+        for (int i = 3; i < values.length; ++i)
+            wrongAnswers.add(values[i]);
+
+        this.hashCode = hashCode64(question);
+
     }
 
     //endregion
